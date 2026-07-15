@@ -14,6 +14,7 @@ class Solution:
         h = x
         for i in range(n):
             h = h @ weights[i] + biases[i]
-            h = np.maximum(0, h)
+            if i < n - 1:
+                h = np.maximum(0, h)
 
         return np.round(h, 5)
