@@ -18,7 +18,7 @@ class Solution(nn.Module):
         # Hint: The embedding layer outputs a B, T, embed_dim tensor
         # but you should average it into a B, embed_dim tensor before using the Linear layer
         x = self.embedding(x)
-        x = x.mean(dim=1)
+        x = torch.mean(x, dim=1)
         x = self.linear(x)
         x = self.sigmoid(x)
         # Return a B, 1 tensor and round to 4 decimal places
