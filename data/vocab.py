@@ -5,13 +5,10 @@ class Solution:
         # Return (stoi, itos) where:
         # - stoi maps each unique character to a unique integer (sorted alphabetically)
         # - itos is the reverse mapping (integer to character)
-        stoi, itos = {}, {}
-        unique = sorted(set(text))
-        for i, ch in enumerate(unique):
-            stoi[ch] = stoi.get(ch, 0) + i
-            itos[i] = ch
-        
-        return (stoi, itos)
+        chars = sorted(set(text))
+        stoi = {ch: i for i, ch in enumerate(chars)}
+        itos = {i: ch for ch, i in stoi.items()}
+        return stoi, itos
 
     def encode(self, text: str, stoi: Dict[str, int]) -> List[int]:
         # Convert a string to a list of integers using stoi mapping
