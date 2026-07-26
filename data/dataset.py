@@ -9,7 +9,7 @@ class Solution:
         # 3. For each index i, X = tokens[i:i+context_length], Y = tokens[i+1:i+1+context_length]
         torch.manual_seed(0)
         tokens = raw_dataset.split()
-        idx = torch.randint(len(tokens) - context_length, (batch_size, ))
+        idx = torch.randint(0, len(tokens) - context_length, (batch_size, )).tolist()
 
         X = list([tokens[i:i+context_length] for i in idx])
         y = list([tokens[i+1:i+context_length+1] for i in idx])
