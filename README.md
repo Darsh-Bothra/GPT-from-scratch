@@ -40,8 +40,6 @@ python train.py
 python generate.py
 ```
 
-## Course
-
 This project was built by having knowledge of the following:
 - Math Foundations (gradient descent, activations, loss functions)
 - Neural Networks from scratch (neuron, backprop, MLP)
